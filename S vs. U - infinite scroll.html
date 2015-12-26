@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Sarah vs. the universe</title>
+    <link rel="shortcut icon" href="http://static.tumblr.com/mcltjw3/izhm8zjiu/favicon.ico">
+    <!-- DEFAULT TEXT -->
+    <meta name="text:Currently Listening" content=""/>
+    <meta name="text:Currently Reading" content=""/>
+<style type="text/css">
+/* Body and Div Styles*/ 
+* {
+list-style:none;
+padding:0;
+margin:0;
+}
+blockquote {
+    margin: 0px;
+    padding-left: 0px; }
+body {
+background-color:white;
+font-family: Arial;
+font-size: 11px;
+font-color: #ffffff;
+text-align:center;
+}
+#main {
+text-align:left;
+background-color:white;
+width: 400px; 
+min-height: 200px;
+padding-left:5px;
+padding-right;5px;
+float:right;
+}
+#footer{
+    text-align:center;
+    width:400px;
+    position:fixed;
+    bottom:0px;
+    color:white;
+    background-color:black;
+    padding-top:2px;
+    overflow:hidden;
+    height:13px;
+    }
+#footer:hover{
+    height:90px;
+    }
+#wrapper {
+width: 410px;
+margin:auto;
+    }
+#posts{
+    padding-top:69px;
+    }
+::-webkit-scrollbar-thumb:vertical {
+    background-color: #0099cc;
+    width:5px;
+    height:100px;
+    border: 1px solid #0099cc;
+    }
+ 
+::-webkit-scrollbar {
+    height:10px;
+    width:5px;
+    background-color: white;
+    }
+/* Link Styles*/ 
+a {
+text-decoration: none;
+color: #0099cc;
+}
+a:visted {
+text-decoration: none;
+}
+a:active {
+text-decoration: none;
+}
+a:hover {
+color: #ffffff;
+}
+/*Extras*/
+a.linkopacity:hover img {
+ filter:alpha(opacity=50);
+ -moz-opacity: 0.5; 
+ opacity: 0.5;
+ -khtml-opacity: 0.5;}
+
+ a.linkopacity img {
+ filter:alpha(opacity=100); 
+ -moz-opacity: 1.0; 
+ opacity: 1.0;
+ -khtml-opacity: 1.0; }
+#toTop {
+position:fixed;
+bottom:80px;
+right:80px;
+cursor:pointer;
+background:url(http://static.tumblr.com/fgfmpgh/M3zkzagj7/totop.png) no-repeat;
+text-indent:-9999px;
+width:51px;
+height:51px;
+}
+</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35854447-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35854447-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<div id="wrapper">
+<div id="main">
+<a href="/"><img style="position:fixed;"src="http://static.tumblr.com/xpsdmh2/sGumecevp/reblogtumblrheader.png"/></a>       
+  <ol id="posts">
+            {block:Posts}
+
+                {block:Text}
+                    <li class="post text" >
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        {Body} <a href="{Permalink}">&#8594;</a>
+                    </li>
+                {/block:Text}
+
+                {block:Photo}
+                    <li class="post photo">
+                        <a class="linkopacity" href="{Permalink}"> <img src="{PhotoURL-400}" alt="{PhotoAlt}" border="0" /> </a>
+
+                    </li>
+                {/block:Photo}
+                
+                {block:Photoset}
+                    <li class="post photoset"  >
+                        {Photoset-400}
+
+                    </li>
+                {/block:Photoset}
+
+                {block:Quote}
+                    <li class="post quote"  >
+                        "{Quote}"
+
+                        {block:Source}
+                            <div class="source">{Source}</div>
+                        {/block:Source} <br />
+                    </li>
+                {/block:Quote}
+
+                {block:Link}
+                    <li class="post link"  >
+                        <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </li>
+                {/block:Link}
+
+                {block:Chat}
+                    <li class="post chat"  >
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </li>
+                {/block:Chat}
+
+                {block:Video}
+                    <li class="post video"  >
+                        {Video-400}
+
+                        {block:Caption}
+                            <div class="caption">{Caption} <a href="{Permalink}">&#8594;</a></div>
+                        {/block:Caption}
+                    </li>
+                {/block:Video}
+
+                {block:Audio}
+                    <li class="post audio"  >
+                    {block:AlbumArt}
+<center><img src="{AlbumArtURL}" width="200" height= "200" /></center>
+{/block:AlbumArt}
+                        <center>{AudioPlayerWhite}</center>
+
+                        {block:Caption}
+                            <div class="caption" style="text-align:center;">{Caption} {PlayCountWithLabel} <br /><a href="{Permalink}">&#8594;</a></div>
+                        {/block:Caption}
+                    </li>
+                {/block:Audio}
+{PostNotes}
+            {/block:Posts}
+        </ol> 
+<div id="footer">
+    &#9650; hover over here &#9650;<br /> <br />
+    Hi I'm awkward and really Sarah.<br />
+    I'm currently listening to {block:IfCurrentlyListening}{text:Currently Listening}{/block:IfCurrentlyListening} and reading {block:IfCurrentlyReading}{text:Currently Reading}{/block:IfCurrentlyReading}. <br />
+// <a href="/ask">ask</a> <a href="/me">about me</a> <a href="/tagged/me">face</a> <a href="http://blog.sarahkemi.com">personal blog</a> <a href="http://sarahkemi.com">music</a> <a href="http://sarahaladetan.com">portfolio</a> // <br />
+<a href="http://twitter.com/sarahkemi">twitter</a>
+<a href="http://facebook.com/sarahkemi">facebook</a>
+<a href="http://youtube.com/sarahkemi">youtube</a>
+<a href="http://sarahkemi.bandcamp.com">bandcamp</a>
+<a href="http://soundcloud.com/sarahkemi">soundcloud</a> <br />
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>
+<a href="#" id="toTop">^ Scroll to Top </a>
+</body>
+<!-- Scroll -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/fgfmpgh/Qqfkzalyi/jquery.scroll.pack.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/fgfmpgh/7xukzalz8/jquery.easing.js"></script>
+<script type="text/javascript">
+$(function() {
+$("#toTop").scrollToTop({speed:500,start:700});
+});
+</script>
+<!-- / Scroll -->
+</html>

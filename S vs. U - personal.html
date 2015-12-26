@@ -1,0 +1,232 @@
+
+<html>
+<head>
+<title>Sarah vs. the universe</title>
+    <link rel="shortcut icon" href="http://static.tumblr.com/mcltjw3/izhm8zjiu/favicon.ico">
+    <!-- DEFAULT TEXT -->
+    <meta name="text:Currently Listening" content=""/>
+    <meta name="text:Currently Reading" content=""/>
+<style>
+*{
+list-style:none;
+}
+body {
+text-align:left;
+font-family:Arial;
+font-size:14px;
+color:#666666;
+}
+#wrapper {
+margin:25px auto;
+width:700px;
+}
+#blog{
+width:490px;
+float:left;
+}
+#side{
+width:180px;
+float:right;
+text-align:left;
+padding-left:30px;
+position:relative;
+right:0;
+}
+a {
+text-decoration:none;
+color:#000000;
+}
+a:hover{
+color:#ff9999;
+}
+/*Extras*/
+a.linkopacity:hover img {
+ filter:alpha(opacity=50);
+ -moz-opacity: 0.5; 
+ opacity: 0.5;
+ -khtml-opacity: 0.5;}
+
+ a.linkopacity img {
+ filter:alpha(opacity=100); 
+ -moz-opacity: 1.0; 
+ opacity: 1.0;
+ -khtml-opacity: 1.0; }
+#toTop {
+position:fixed;
+bottom:80px;
+right:80px;
+cursor:pointer;
+background:url(http://static.tumblr.com/fgfmpgh/M3zkzagj7/totop.png) no-repeat;
+text-indent:-9999px;
+width:51px;
+height:51px;
+}
+blockquote {
+margin: 1em 3em;
+color: #666666;
+border-left: 2px solid #666666;
+padding-left: 1em; 
+}
+.info {
+font-size:10px;
+}
+</style>
+<script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35856047-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<div id="wrapper">
+<a href="/"><img src="http://static.tumblr.com/mcltjw3/tyAm8zizg/banner.png" /></a> <br /> <br />
+<div id="blog">
+       
+  <ol id="posts">
+  <div class = "autopagerize_page_element" >
+            {block:Posts}
+                {block:Text}
+                    <li class="post text" >
+                        {block:Title}
+                            <b><a href="{Permalink}">{Title}</a></b>
+                        {/block:Title}
+                        {Body}
+                    </li>
+                {/block:Text}
+
+                {block:Photo}
+                    <li class="post photo">
+                        <a class="linkopacity" href="{Permalink}"> <img src="{PhotoURL-400}" alt="{PhotoAlt}" border="0" /> </a>
+{block:Caption}{Caption}{/block:Caption}
+                    </li>
+                {/block:Photo}
+                
+                {block:Photoset}
+                    <li class="post photoset"  >
+                        {Photoset-400}
+{block:Caption}{Caption}{/block:Caption}
+                    </li>
+                {/block:Photoset}
+
+                {block:Quote}
+                    <li class="post quote"  >
+                    <b>A wonderful quote:</b> <br />
+                        "{Quote}"
+
+                        {block:Source}
+                            <div class="source">{Source}</div>
+                        {/block:Source}
+                    </li>
+                {/block:Quote}
+
+                {block:Link}
+                    <li class="post link"  >
+                    <b>A cool link:</b> <br />
+                        <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </li>
+                {/block:Link}
+
+                {block:Chat}
+                    <li class="post chat">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </li>
+                {/block:Chat}
+
+                {block:Video}
+                    <li class="post video"  >
+                        {Video-400}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Video}
+
+                {block:Audio}
+                    <li class="post audio"  >
+                    {block:AlbumArt}
+<center><img src="{AlbumArtURL}" width="200" height= "200" /></center> <br />
+{/block:AlbumArt}
+                        <center>{AudioPlayerBlack}</center>
+
+                        {block:Caption}
+                            <div class="caption" style="text-align:center;">{Caption} {PlayCountWithLabel} <br /></div>
+                        {/block:Caption}
+                    </li>
+                {/block:Audio}
+                <p class="info">{block:Date} Posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek}, {Month} {DayOfMonth}, {Year} {block:Date} | <a href="{Permalink}">Link</a>
+<br /> 
+<!-- {block:HasTags}Tags: {block:Tags}<a href="{TagURLChrono}">#{Tag}</a> {/block:Tags}{/block:HasTags} -->
+                </p>
+{PostNotes}
+<br />
+            {/block:Posts}
+            </div>
+        </ol> 
+</div>
+<div id="side">
+<b>Hello</b> <br />
+Hi I'm Sarah. 16. MN. Ravenclaw. I create things. <a href="/about">Read More?</a> <br /> <br />
+<b>Currently</b><br />
+{block:IfCurrentlyListening}
+Listening to: {text:Currently Listening} <br />
+{/block:IfCurrentlyListening}
+{block:IfCurrentlyReading}
+Reading: {text:Currently Reading}<br />
+{/block:IfCurrentlyReading}
+</br>
+<b>Pages</b> <br />
+<a href="/ask">ask</a> <br />
+<a href="/about">about</a> <br />
+<a href="http://sarahkemi.com">portfolio</a> <br /> <br />
+<b>Links</b> <br />
+<a href="http://twitter.com/sarahkemi">twitter</a> <br />
+<a href="http://facebook.com/sarahkemi">facebook</a> <br />
+<a href="http://youtube.com/sarahkemi">youtube</a> <br />
+<a href="http://sarahkemi.bandcamp.com">bandcamp</a> <br />
+<a href="http://soundcloud.com/sarahkemi">soundcloud</a> <br /> <br />
+<b>Instagram</b> <br />
+<!-- SnapWidget -->
+<iframe src="http://snapwidget.com/in/?u=c2FyYWhrZW1pfGlufDUwfDJ8Mnx8bm98NXxmYWRlSW4=" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:110px; height: 110px" ></iframe>
+</div>
+</div>
+<a href="#" id="toTop">^ Scroll to Top </a>
+</body>
+<!-- Scroll -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/fgfmpgh/Qqfkzalyi/jquery.scroll.pack.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/fgfmpgh/7xukzalz8/jquery.easing.js"></script>
+<script type="text/javascript">
+$(function() {
+$("#toTop").scrollToTop({speed:500,start:700});
+});
+</script>
+<!-- / Scroll -->
+</html>

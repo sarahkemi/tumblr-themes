@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>{Title}</title>
+<style>
+/* Body and Div Styles*/ 
+* {
+list-style:none;
+padding:0;
+}
+body {
+background-color:white;
+font-family: Arial;
+font-size: 14px;
+font-color: #cccccc;
+}
+#site {
+background-color:white;
+width: 285px; 
+min-height: 200px;
+float:right;
+}
+#wrapper {
+width: 423px;
+margin: 50px auto;
+font-family: Arial;
+font-size: 10px;
+font-color: #cccccc;
+padding: 5px;
+}
+#side {
+width: 138px;
+float:right;
+position: fixed;
+}
+/* Link Styles*/ 
+a {
+text-decoration: none;
+color: #cccccc;
+}
+a:visted {
+text-decoration: none;
+}
+a:active {
+text-decoration: none;
+}
+a:hover {
+color: #009900;
+}
+/*Extras*/
+.header{font-size:9px;
+color:#000;
+background-color:#ccc;
+line-height: 9px;
+border-bottom: solid 7px #FFFFFF;
+text-align: right;
+}
+.header a {
+color: #000;
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="site">
+<p style="text-align:center;">
+{block:HasPages}{block:Pages}<a href="{URL}" class="page">{Label}</a> {/block:Pages}{/block:HasPages}
+                {block:AskEnabled}<a href="/ask">ask</a>{/block:AskEnabled} 
+								<a href="/">index</a> 
+		<a href="/random">random</a> 
+		<a href="/archive">archive</a> 
+		<a href="http://theinfinitesarah.tumblr.com">made by.</a>
+</p>
+<br />
+      <ol id="posts">
+            {block:Posts}
+<p style="text-align:center;">
+<a href="{Permalink}">{block:Date}{MonthNumber}/{DayOfMonth} @ {12Hour}:{Minutes}{/block:Date}</a></p><br>
+                {block:Text}
+                    <li class="post text">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        {Body}
+                    </li>
+                {/block:Text}
+
+                {block:Photo}
+                    <li class="post photo" style="text-align:center;">
+                        <img src="{PhotoURL-250}" alt="{PhotoAlt}"/>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photo}
+                
+                {block:Photoset}
+                    <li class="post photoset" style="text-align:center;">
+                        {Photoset-250}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photoset}
+
+                {block:Quote}
+                    <li class="post quote">
+                        "{Quote}"
+
+                        {block:Source}
+                            <div class="source">{Source}</div>
+                        {/block:Source}
+                    </li>
+                {/block:Quote}
+
+                {block:Link}
+                    <li class="post link">
+                        <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </li>
+                {/block:Link}
+
+                {block:Chat}
+                    <li class="post chat">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </li>
+                {/block:Chat}
+
+                {block:Video}
+                    <li class="post video" style="text-align:center;">
+                        {Video-250}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Video}
+
+                {block:Audio}
+                    <li class="post audio">
+<br>
+                        {AudioPlayerGrey}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Audio}
+<br>
+<br>
+            {/block:Posts}
+        </ol>
+
+        <p id="footer">
+            {block:PreviousPage}
+                <a href="{PreviousPage}">&#171; Previous</a>
+            {/block:PreviousPage}
+
+            {block:NextPage}
+                <a href="{NextPage}">Next &#187;</a>
+            {/block:NextPage}
+</div>
+<div id="side">
+<a href="/"><img src="{PortraitURL-128}" /></a><br>
+<p style="text-align:center;">{Description}</a>
+</div>
+</div>
+</body>
+</html>

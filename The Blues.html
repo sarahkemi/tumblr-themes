@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>{Title}</title>
+<style type="text/css">
+*{
+list-style:none;
+padding:0;
+}
+body{
+background-color:white;
+font-family:arial;
+font-size:10pt;
+color:#999999;
+}
+h1{
+font-family:arial;
+font-size:14pt;
+color:#3399cc;
+}
+#wrapper{
+width:620px;
+margin: 0 auto;
+}
+#side{
+float:left;
+width:90px;
+padding-right:10px;
+position:fixed;
+}
+#main{
+float:right;
+max-width:500px;
+}
+a{
+text-decoration:none;
+color:#3399cc;
+}
+a:hover{
+color:#000000;
+}
+#hide {
+position:absolute;
+top:0;
+left: 90%;
+}
+#hide a{
+color: #fff;
+}
+#hide a:hover {
+color:#3399cc;
+}
+</style> 
+</head>
+<body>
+<div id="wrapper">
+<div id="side" style="color:#3399cc;">
+<a href="/"><img src="{PortraitURL-96}" /></a>
+<br />
+<br>
+{block:HasPages}{block:Pages}<a href="{URL}" class="page">{Label}</a><br>{/block:Pages}{/block:HasPages}
+                {block:AskEnabled}<a href="/ask">ask</a>{/block:AskEnabled}<br>
+    	<a href="/random">random</a><br>
+		<a href="/archive">archive</a><br>
+		<a href="http://theinfinitesarah.tumblr.com">made by.</a><br>
+		{block:SubmissionsEnabled}<a href="/submit">submit</a>{/block:SubmissionsEnabled}
+		
+---------<br />
+{block:Pagination}{block:PreviousPage}<a href="{PreviousPage}" style="font-size:15pt;">&laquo;</a>{/block:PreviousPage} {block:NextPage}<a href="{NextPage}" style="font-size:15pt;">&raquo;</a>{/block:NextPage}<BR>{/block:Pagination}
+		{block:PermalinkPagination}{block:PreviousPost}&laquo; <a href="{PreviousPost}">prev</a>{/block:PreviousPost} {block:NextPost}<a href="{NextPost}">next</a> &raquo;{/block:NextPost}<BR>{/block:PermalinkPagination}
+<br />
+</div>
+<div id="main">
+<div id="posts">
+        <h1>{Title}</h1>
+
+        {block:Description}
+            <p id="description">{Description}</p>
+        {/block:Description}
+
+        <ol id="posts">
+            {block:Posts}
+<br>
+                {block:Text}
+                    <li class="post text" >
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        {Body}
+                    </li>
+                {/block:Text}
+
+                {block:Photo}
+                    <li class="post photo">
+                        <a href="{Permalink}"> <img src="{PhotoURL-500}" alt="{PhotoAlt}" style="padding-top:5px; padding-bottom:5px;"/> </a>
+
+                    </li>
+                {/block:Photo}
+                
+                {block:Photoset}
+                    <li class="post photoset"  >
+                        {Photoset-400}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photoset}
+
+                {block:Quote}
+                    <li class="post quote"  >
+                        "{Quote}"
+
+                        {block:Source}
+                            <div class="source">{Source}</div>
+                        {/block:Source}
+                    </li>
+                {/block:Quote}
+
+                {block:Link}
+                    <li class="post link"  >
+                        <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </li>
+                {/block:Link}
+
+                {block:Chat}
+                    <li class="post chat"  >
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </li>
+                {/block:Chat}
+
+                {block:Video}
+                    <li class="post video"  >
+                        {Video-500}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Video}
+
+                {block:Audio}
+                    <li class="post audio"  >
+                        {AudioPlayerGrey}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Audio}
+{PostNotes}
+            {/block:Posts}
+        </ol>
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>
+</body>
+</html>
